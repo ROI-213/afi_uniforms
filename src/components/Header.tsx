@@ -22,7 +22,7 @@ const MEN_MENU = [
   { name: 'Industrial & Safety Workwear', href: '/men?category=industrial', desc: 'Jackets, coveralls & cargo' },
   { name: 'Hospitality & Chef Coats', href: '/men?category=hospitality', desc: 'Hotel, banquet & culinary' },
   { name: 'Security & Tactical Uniforms', href: '/men?category=security', desc: 'Guard shirts & utility pants' },
-  { name: "Men's Healthcare Scrubs", href: '/men', desc: 'Clinical sets & separates' },
+  { name: "Men's Healthcare Scrubs", href: '/men?category=scrubs', desc: 'Clinical sets & separates' },
   { name: 'Logistics & Retail Polos', href: '/men?category=logistics', desc: 'Fleet & store operations' },
 ]
 

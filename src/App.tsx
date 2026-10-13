@@ -10,6 +10,7 @@ import CartPage from './pages/CartPage'
 import WishlistPage from './pages/WishlistPage'
 import BulkOrdersPage from './pages/BulkOrdersPage'
 import WomenCategoryPage from './pages/WomenCategoryPage'
+import MenCategoryPage from './pages/MenCategoryPage'
 
 // Scroll to top on route change
 function ScrollToTop() {
@@ -47,7 +48,7 @@ function AppInner() {
             <Route path="/" element={<HomePage />} />
             <Route path="/shop" element={<ShopPage />} />
             <Route path="/women" element={<WomenCategoryPage />} />
-            <Route path="/men" element={<ShopPage />} />
+            <Route path="/men" element={<MenCategoryPage />} />
             <Route path="/new-arrivals" element={<ShopPage />} />
             <Route path="/bestsellers" element={<ShopPage />} />
             <Route path="/plus-size" element={<WomenCategoryPage defaultCategory="plussize" />} />
