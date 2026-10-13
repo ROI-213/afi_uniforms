@@ -9,6 +9,7 @@ import ProductPage from './pages/ProductPage'
 import CartPage from './pages/CartPage'
 import WishlistPage from './pages/WishlistPage'
 import BulkOrdersPage from './pages/BulkOrdersPage'
+import CustomUniformsPage from './pages/CustomUniformsPage'
 import WomenCategoryPage from './pages/WomenCategoryPage'
 import MenCategoryPage from './pages/MenCategoryPage'
 
@@ -58,6 +59,7 @@ function AppInner() {
             <Route path="/cart" element={<CartPage />} />
             <Route path="/wishlist" element={<WishlistPage />} />
             <Route path="/bulk-orders" element={<BulkOrdersPage />} />
+            <Route path="/custom-uniforms" element={<CustomUniformsPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </PageWrapper>

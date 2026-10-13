@@ -16,7 +16,7 @@ const FOOTER_LINKS = {
     { name: 'About Us', href: '/about' },
     { name: 'Our Story', href: '/about#story' },
     { name: 'Bulk Orders', href: '/bulk-orders' },
-    { name: 'Customisation', href: '/bulk-orders#custom' },
+    { name: 'Custom Uniforms', href: '/custom-uniforms' },
     { name: 'Gallery', href: '/gallery' },
     { name: 'Blog', href: '/blog' },
     { name: 'Careers', href: '/careers' },
