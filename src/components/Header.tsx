@@ -51,7 +51,6 @@ const NAV_LINKS = [
   { name: 'Women', href: '/women', dropdown: 'women' },
   { name: 'Men', href: '/men', dropdown: 'men' },
   { name: 'Shop All', href: '/shop' },
-  { name: 'Industries', href: '/shop', dropdown: 'industries' },
   { name: 'Collections', href: '/collections', dropdown: 'collections' },
   { name: 'Custom Uniforms', href: '/bulk-orders' },
   { name: 'Bulk Orders', href: '/bulk-orders' },
@@ -59,7 +58,6 @@ const NAV_LINKS = [
 
 const MOBILE_NAV = [
   { name: 'Shop All', href: '/shop' },
-  { name: 'Industries', href: '/shop', children: INDUSTRIES_MENU },
   { name: 'Women', href: '/women', children: WOMEN_MENU },
   { name: 'Men', href: '/men', children: MEN_MENU },
   { name: 'Collections', href: '/collections', children: COLLECTIONS_MENU },

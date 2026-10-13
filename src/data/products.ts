@@ -1,7 +1,10 @@
 import type { Product } from '../context/StoreContext'
+import { CREATED_PRODUCTS } from './createdProducts'
 
-// Authentic AFI Uniform Multi-Industry Professional Uniform & Workwear Catalogue
-export const PRODUCTS: Product[] = [
+export { CREATED_PRODUCTS }
+
+// Legacy products catalog
+const LEGACY_PRODUCTS: Product[] = [
   {
     id: 'p009',
     name: 'Executive Corporate Navy Blazer & Shirt Set',
@@ -691,6 +694,9 @@ export const PRODUCTS: Product[] = [
     description: 'Plus-size formal executive work shirt in crisp powder sky blue stretch cotton blend with tailored comfort fit, structured collar, and non-gap button placket.',
   },
 ]
+
+// All products with created studio products prioritized
+export const PRODUCTS: Product[] = [...CREATED_PRODUCTS, ...LEGACY_PRODUCTS]
 
 export const CATEGORIES = [
   {

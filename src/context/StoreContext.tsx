@@ -8,6 +8,7 @@ export interface Product {
   image: string
   secondaryImage?: string
   category: string
+  gender?: 'women' | 'men' | 'unisex'
   collection?: string
   badge?: 'new' | 'sale' | 'bestseller' | 'featured'
   salesCount?: number

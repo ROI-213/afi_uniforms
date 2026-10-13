@@ -565,3 +565,23 @@ button {
   }
 }
 
+/* === Shop Page Left Sidebar & Filter Responsiveness === */
+@media (min-width: 1024px) {
+  .mobile-filter-btn {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1023px) {
+  .shop-page-columns {
+    display: block !important;
+  }
+  .shop-left-sidebar {
+    display: none !important;
+  }
+  .mobile-filter-btn {
+    display: inline-flex !important;
+  }
+}
+
+
