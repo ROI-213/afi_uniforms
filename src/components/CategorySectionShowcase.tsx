@@ -53,6 +53,7 @@ interface CategoryProductItem extends Product {
   dateLabel: string
   badgeText: 'NEW' | 'JUST IN'
   extraColoursLabel: string
+  colorImages?: Record<string, string>
 }
 
 interface CategoryData {
@@ -84,13 +85,23 @@ const CATEGORIES: CategoryData[] = [
         name: 'Bengaluru Signature Antimicrobial Scrub Suit',
         price: 1499,
         originalPrice: 1949,
-        image: '/cat-health-1.jpg',
+        image: '/col-purple.jpg',
         category: 'healthcare',
         collection: 'CLINICAL SCRUBS',
         eyebrow: 'CLINICAL SCRUBS',
         badgeText: 'NEW',
         dateLabel: '24 Mar 2026',
-        colors: ['#A855F7', '#EC4899', '#1E3A8A', '#475569'],
+        colors: ['#A855F7', '#EC4899', '#0284C7', '#0D9488'],
+        colorImages: {
+          '#A855F7': '/col-purple.jpg',
+          '#EC4899': '/col-pink.jpg',
+          '#0284C7': '/col-sky-blue.jpg',
+          '#38BDF8': '/col-sky-blue.jpg',
+          '#0D9488': '/col-teal.jpg',
+          '#1E3A8A': '/women/scrubs/scrubs-5.jpg',
+          '#475569': '/cat-health-1.jpg',
+          '#FFFFFF': '/col-white.jpg',
+        },
         extraColoursLabel: '+3 colours',
         sizes: ['S', 'M', 'L', 'XL'],
       },
@@ -106,6 +117,11 @@ const CATEGORIES: CategoryData[] = [
         badgeText: 'JUST IN',
         dateLabel: '20 Mar 2026',
         colors: ['#FFFFFF', '#1E3A8A', '#64748B'],
+        colorImages: {
+          '#FFFFFF': '/cat-health-2.jpg',
+          '#1E3A8A': '/cat-corp-1.jpg',
+          '#64748B': '/col-steel-grey.jpg',
+        },
         extraColoursLabel: '+1 colour',
         sizes: ['38', '40', '42', '44'],
       },
@@ -121,6 +137,12 @@ const CATEGORIES: CategoryData[] = [
         badgeText: 'NEW',
         dateLabel: '18 Mar 2026',
         colors: ['#2563EB', '#0284C7', '#0D9488', '#0B2744'],
+        colorImages: {
+          '#2563EB': '/cat-health-3.jpg',
+          '#0284C7': '/col-sky-blue.jpg',
+          '#0D9488': '/col-teal.jpg',
+          '#0B2744': '/women/scrubs/scrubs-5.jpg',
+        },
         extraColoursLabel: '+2 colours',
         sizes: ['XS', 'S', 'M', 'L'],
       },
@@ -135,7 +157,13 @@ const CATEGORIES: CategoryData[] = [
         eyebrow: 'SURGICAL THEATRE',
         badgeText: 'NEW',
         dateLabel: '15 Mar 2026',
-        colors: ['#0F766E', '#134E4A', '#0B2744'],
+        colors: ['#0F766E', '#134E4A', '#0B2744', '#722F37'],
+        colorImages: {
+          '#0F766E': '/cat-health-4.jpg',
+          '#134E4A': '/col-teal.jpg',
+          '#0B2744': '/women/scrubs/scrubs-5.jpg',
+          '#722F37': '/women/scrubs/scrubs-6.jpg',
+        },
         extraColoursLabel: '+2 colours',
         sizes: ['M', 'L', 'XL', 'XXL'],
       },
@@ -163,7 +191,13 @@ const CATEGORIES: CategoryData[] = [
         eyebrow: 'EXECUTIVE BLAZER',
         badgeText: 'NEW',
         dateLabel: '25 Mar 2026',
-        colors: ['#0B2744', '#1E293B', '#334155'],
+        colors: ['#0B2744', '#14532D', '#1E293B', '#334155'],
+        colorImages: {
+          '#0B2744': '/cat-corp-1.jpg',
+          '#14532D': '/col-bottle-green.jpg',
+          '#1E293B': '/cat-sec-3.jpg',
+          '#334155': '/cat-corp-3.jpg',
+        },
         extraColoursLabel: '+2 colours',
         sizes: ['38', '40', '42', '44'],
       },
@@ -178,7 +212,13 @@ const CATEGORIES: CategoryData[] = [
         eyebrow: 'CORPORATE SHIRTING',
         badgeText: 'JUST IN',
         dateLabel: '22 Mar 2026',
-        colors: ['#FFFFFF', '#BFDBFE', '#E2E8F0'],
+        colors: ['#FFFFFF', '#0B2744', '#BFDBFE', '#E2E8F0'],
+        colorImages: {
+          '#FFFFFF': '/cat-corp-2.jpg',
+          '#0B2744': '/col-navy-blue.jpg',
+          '#BFDBFE': '/col-sky-blue.jpg',
+          '#E2E8F0': '/cat-corp-2.jpg',
+        },
         extraColoursLabel: '+3 colours',
         sizes: ['39', '40', '42', '44'],
       },
@@ -194,6 +234,11 @@ const CATEGORIES: CategoryData[] = [
         badgeText: 'NEW',
         dateLabel: '19 Mar 2026',
         colors: ['#334155', '#0B2744', '#475569'],
+        colorImages: {
+          '#334155': '/cat-corp-3.jpg',
+          '#0B2744': '/cat-corp-1.jpg',
+          '#475569': '/col-charcoal.jpg',
+        },
         extraColoursLabel: '+1 colour',
         sizes: ['38', '40', '42', '44'],
       },
@@ -209,6 +254,11 @@ const CATEGORIES: CategoryData[] = [
         badgeText: 'NEW',
         dateLabel: '16 Mar 2026',
         colors: ['#0B2744', '#3B82F6', '#1E293B'],
+        colorImages: {
+          '#0B2744': '/cat-corp-4.jpg',
+          '#3B82F6': '/col-navy-blue.jpg',
+          '#1E293B': '/cat-sec-3.jpg',
+        },
         extraColoursLabel: '+2 colours',
         sizes: ['30', '32', '34', '36'],
       },
@@ -236,7 +286,12 @@ const CATEGORIES: CategoryData[] = [
         eyebrow: 'ENGINEERING PRO',
         badgeText: 'NEW',
         dateLabel: '24 Mar 2026',
-        colors: ['#0B2744', '#EAB308', '#1E3A8A'],
+        colors: ['#0B2744', '#1E3A8A', '#EAB308'],
+        colorImages: {
+          '#0B2744': '/cat-ind-1.jpg',
+          '#1E3A8A': '/col-royal-blue.jpg',
+          '#EAB308': '/cat-ind-2.jpg',
+        },
         extraColoursLabel: '+2 colours',
         sizes: ['M', 'L', 'XL', 'XXL'],
       },
@@ -252,6 +307,9 @@ const CATEGORIES: CategoryData[] = [
         badgeText: 'JUST IN',
         dateLabel: '21 Mar 2026',
         colors: ['#84CC16', '#F97316', '#EAB308'],
+        colorImages: {
+          '#84CC16': '/cat-ind-2.jpg',
+        },
         extraColoursLabel: '+1 colour',
         sizes: ['Free Size', 'L', 'XL'],
       },
@@ -266,7 +324,12 @@ const CATEGORIES: CategoryData[] = [
         eyebrow: 'TECHNICAL WORKWEAR',
         badgeText: 'NEW',
         dateLabel: '18 Mar 2026',
-        colors: ['#0B2744', '#1E3A8A', '#334155'],
+        colors: ['#0B2744', '#475569', '#556B2F'],
+        colorImages: {
+          '#0B2744': '/cat-ind-3.jpg',
+          '#475569': '/col-steel-grey.jpg',
+          '#556B2F': '/col-olive.jpg',
+        },
         extraColoursLabel: '+2 colours',
         sizes: ['S', 'M', 'L', 'XL'],
       },
@@ -281,7 +344,12 @@ const CATEGORIES: CategoryData[] = [
         eyebrow: 'WAREHOUSE UTILITY',
         badgeText: 'NEW',
         dateLabel: '15 Mar 2026',
-        colors: ['#334155', '#1E293B', '#475569'],
+        colors: ['#334155', '#556B2F', '#1E293B'],
+        colorImages: {
+          '#334155': '/cat-ind-4.jpg',
+          '#556B2F': '/col-olive.jpg',
+          '#1E293B': '/col-charcoal.jpg',
+        },
         extraColoursLabel: '+3 colours',
         sizes: ['M', 'L', 'XL', 'XXL'],
       },
@@ -309,7 +377,12 @@ const CATEGORIES: CategoryData[] = [
         eyebrow: 'CHEF & CULINARY',
         badgeText: 'NEW',
         dateLabel: '25 Mar 2026',
-        colors: ['#FFFFFF', '#0B2744', '#1E293B'],
+        colors: ['#FFFFFF', '#18181B', '#0B2744'],
+        colorImages: {
+          '#FFFFFF': '/cat-hosp-1.jpg',
+          '#18181B': '/col-black.jpg',
+          '#0B2744': '/cat-hosp-2.jpg',
+        },
         extraColoursLabel: '+2 colours',
         sizes: ['38', '40', '42', '44'],
       },
@@ -324,7 +397,12 @@ const CATEGORIES: CategoryData[] = [
         eyebrow: 'HOSPITALITY SIGNATURE',
         badgeText: 'JUST IN',
         dateLabel: '22 Mar 2026',
-        colors: ['#0B2744', '#1E3A8A', '#312E81'],
+        colors: ['#0B2744', '#722F37', '#D4B996'],
+        colorImages: {
+          '#0B2744': '/cat-hosp-2.jpg',
+          '#722F37': '/col-wine.jpg',
+          '#D4B996': '/col-beige.jpg',
+        },
         extraColoursLabel: '+1 colour',
         sizes: ['36', '38', '40', '42'],
       },
@@ -339,7 +417,12 @@ const CATEGORIES: CategoryData[] = [
         eyebrow: 'BANQUET & SERVICE',
         badgeText: 'NEW',
         dateLabel: '19 Mar 2026',
-        colors: ['#0B2744', '#18181B', '#27272A'],
+        colors: ['#0B2744', '#D4B996', '#18181B'],
+        colorImages: {
+          '#0B2744': '/cat-hosp-3.jpg',
+          '#D4B996': '/col-beige.jpg',
+          '#18181B': '/col-black.jpg',
+        },
         extraColoursLabel: '+2 colours',
         sizes: ['38', '40', '42', '44'],
       },
@@ -382,7 +465,12 @@ const CATEGORIES: CategoryData[] = [
         eyebrow: 'SECURITY PRO SERIES',
         badgeText: 'NEW',
         dateLabel: '24 Mar 2026',
-        colors: ['#0B2744', '#1E3A8A', '#1E293B'],
+        colors: ['#0B2744', '#334155', '#18181B'],
+        colorImages: {
+          '#0B2744': '/cat-sec-1.jpg',
+          '#334155': '/col-charcoal.jpg',
+          '#18181B': '/cat-sec-2.jpg',
+        },
         extraColoursLabel: '+2 colours',
         sizes: ['38', '40', '42', '44'],
       },
@@ -397,7 +485,12 @@ const CATEGORIES: CategoryData[] = [
         eyebrow: 'TACTICAL SUPERVISOR',
         badgeText: 'JUST IN',
         dateLabel: '21 Mar 2026',
-        colors: ['#18181B', '#0B2744', '#27272A'],
+        colors: ['#18181B', '#334155', '#0B2744'],
+        colorImages: {
+          '#18181B': '/cat-sec-2.jpg',
+          '#334155': '/col-charcoal.jpg',
+          '#0B2744': '/cat-sec-1.jpg',
+        },
         extraColoursLabel: '+1 colour',
         sizes: ['38', '40', '42', '44'],
       },
@@ -413,6 +506,11 @@ const CATEGORIES: CategoryData[] = [
         badgeText: 'NEW',
         dateLabel: '18 Mar 2026',
         colors: ['#09090B', '#18181B', '#0B2744'],
+        colorImages: {
+          '#09090B': '/cat-sec-3.jpg',
+          '#18181B': '/col-black.jpg',
+          '#0B2744': '/cat-corp-1.jpg',
+        },
         extraColoursLabel: '+2 colours',
         sizes: ['40', '42', '44', '46'],
       },
@@ -427,7 +525,12 @@ const CATEGORIES: CategoryData[] = [
         eyebrow: 'FIELD & COMBAT',
         badgeText: 'NEW',
         dateLabel: '15 Mar 2026',
-        colors: ['#556B2F', '#8B7355', '#1E293B'],
+        colors: ['#556B2F', '#1E293B', '#334155'],
+        colorImages: {
+          '#556B2F': '/cat-sec-4.jpg',
+          '#1E293B': '/col-olive.jpg',
+          '#334155': '/col-charcoal.jpg',
+        },
         extraColoursLabel: '+2 colours',
         sizes: ['M', 'L', 'XL', 'XXL'],
       },
@@ -455,7 +558,13 @@ const CATEGORIES: CategoryData[] = [
         eyebrow: 'SCHOOL BLAZER',
         badgeText: 'NEW',
         dateLabel: '25 Mar 2026',
-        colors: ['#0B2744', '#1E3A8A', '#475569'],
+        colors: ['#0B2744', '#14532D', '#1E3A8A', '#475569'],
+        colorImages: {
+          '#0B2744': '/cat-school-1.jpg',
+          '#14532D': '/col-bottle-green.jpg',
+          '#1E3A8A': '/cat-corp-1.jpg',
+          '#475569': '/cat-sec-3.jpg',
+        },
         extraColoursLabel: '+2 colours',
         sizes: ['32', '34', '36', '38'],
       },
@@ -471,6 +580,9 @@ const CATEGORIES: CategoryData[] = [
         badgeText: 'JUST IN',
         dateLabel: '22 Mar 2026',
         colors: ['#0B2744', '#1E293B', '#1E3A8A'],
+        colorImages: {
+          '#0B2744': '/cat-school-2.jpg',
+        },
         extraColoursLabel: '+1 colour',
         sizes: ['28', '30', '32', '34'],
       },
@@ -486,6 +598,10 @@ const CATEGORIES: CategoryData[] = [
         badgeText: 'NEW',
         dateLabel: '19 Mar 2026',
         colors: ['#0B2744', '#FFFFFF', '#1E3A8A'],
+        colorImages: {
+          '#0B2744': '/cat-school-3.jpg',
+          '#FFFFFF': '/cat-corp-2.jpg',
+        },
         extraColoursLabel: '+3 colours',
         sizes: ['S', 'M', 'L', 'XL'],
       },
@@ -501,6 +617,9 @@ const CATEGORIES: CategoryData[] = [
         badgeText: 'NEW',
         dateLabel: '16 Mar 2026',
         colors: ['#FFFFFF', '#F1F5F9', '#E2E8F0'],
+        colorImages: {
+          '#FFFFFF': '/cat-school-4.jpg',
+        },
         extraColoursLabel: '+2 colours',
         sizes: ['36', '38', '40', '42'],
       },
@@ -516,6 +635,7 @@ function SignatureProductCard({ product }: { product: CategoryProductItem }) {
   const [hovered, setHovered] = useState(false)
   const [wishHovered, setWishHovered] = useState(false)
   const [justAdded, setJustAdded] = useState(false)
+  const [isChanging, setIsChanging] = useState(false)
 
   const wishlisted = isInWishlist(product.id)
   const discount = product.originalPrice
@@ -528,6 +648,18 @@ function SignatureProductCard({ product }: { product: CategoryProductItem }) {
     setJustAdded(true)
     setTimeout(() => setJustAdded(false), 1400)
   }
+
+  const handleColorSelect = (hex: string) => {
+    if (selectedColor === hex) return
+    setIsChanging(true)
+    setSelectedColor(hex)
+    setTimeout(() => setIsChanging(false), 200)
+  }
+
+  const hasVariantImage = Boolean(product.colorImages && product.colorImages[selectedColor])
+  const activeImage = hasVariantImage ? product.colorImages![selectedColor] : product.image
+  const isBaseColor = selectedColor === swatches[0]
+  const isWhiteGarment = product.image.includes('lab-coat') || swatches[0]?.toLowerCase() === '#ffffff'
 
   return (
     <div
@@ -561,10 +693,11 @@ function SignatureProductCard({ product }: { product: CategoryProductItem }) {
         <Link
           to={`/product/${product.id}`}
           aria-label={product.name}
-          style={{ display: 'block', width: '100%', height: '100%' }}
+          style={{ display: 'block', width: '100%', height: '100%', position: 'relative' }}
         >
           <img
-            src={product.image}
+            key={activeImage}
+            src={activeImage}
             alt={product.name}
             loading="lazy"
             draggable={false}
@@ -574,9 +707,26 @@ function SignatureProductCard({ product }: { product: CategoryProductItem }) {
               objectFit: 'cover',
               objectPosition: 'center 12%',
               transform: hovered ? 'scale(1.04)' : 'scale(1)',
-              transition: `transform 0.5s ${EASE}`,
+              opacity: isChanging ? 0.6 : 1,
+              transition: `transform 0.5s ${EASE}, opacity 0.2s ease`,
             }}
           />
+
+          {/* Dynamic Garment Color Tint Overlay fallback when no specific photo variant is defined */}
+          {!hasVariantImage && !isBaseColor && (
+            <div
+              aria-hidden
+              style={{
+                position: 'absolute',
+                inset: 0,
+                backgroundColor: selectedColor,
+                mixBlendMode: isWhiteGarment ? 'multiply' : 'color',
+                opacity: 0.42,
+                pointerEvents: 'none',
+                transition: 'all 0.3s ease',
+              }}
+            />
+          )}
         </Link>
 
         {/* Top-Left Badge */}
@@ -787,25 +937,26 @@ function SignatureProductCard({ product }: { product: CategoryProductItem }) {
                 <button
                   key={hex}
                   type="button"
-                  onClick={() => setSelectedColor(hex)}
+                  onClick={() => handleColorSelect(hex)}
                   aria-label={`Select colour ${hex}`}
+                  title={`Select colour ${hex}`}
                   style={{
-                    width: 13,
-                    height: 13,
+                    width: 15,
+                    height: 15,
                     borderRadius: '50%',
                     background: hex,
                     border: isSelected
                       ? '2px solid white'
                       : isWhite
                         ? '1px solid #CBD5E1'
-                        : '1px solid rgba(0,0,0,0.12)',
+                        : '1px solid rgba(0,0,0,0.14)',
                     boxShadow: isSelected
-                      ? '0 0 0 1.5px #146EF5'
+                      ? '0 0 0 2px #146EF5, 0 2px 6px rgba(20, 110, 245, 0.35)'
                       : '0 1px 2px rgba(0,0,0,0.06)',
                     padding: 0,
                     cursor: 'pointer',
                     flexShrink: 0,
-                    transform: isSelected ? 'scale(1.12)' : 'scale(1)',
+                    transform: isSelected ? 'scale(1.2)' : 'scale(1)',
                     transition: 'all 0.18s ease',
                   }}
                 />

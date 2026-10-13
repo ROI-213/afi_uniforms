@@ -949,6 +949,7 @@ function SignatureProductCard({
   const [selectedColor, setSelectedColor] = useState(product.colors?.[0] ?? '#0B2744')
   const [added, setAdded] = useState(false)
   const [wishHovered, setWishHovered] = useState(false)
+  const [isChanging, setIsChanging] = useState(false)
 
   const discountPercent = product.originalPrice
     ? Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)
@@ -961,6 +962,18 @@ function SignatureProductCard({
     setAdded(true)
     setTimeout(() => setAdded(false), 1400)
   }
+
+  const handleColorSelect = (col: string) => {
+    if (selectedColor === col) return
+    setIsChanging(true)
+    setSelectedColor(col)
+    setTimeout(() => setIsChanging(false), 200)
+  }
+
+  const hasVariantImage = Boolean(product.colorImages && product.colorImages[selectedColor])
+  const activeImage = hasVariantImage ? product.colorImages![selectedColor] : product.image
+  const isBaseColor = selectedColor === (product.colors?.[0] ?? '#0B2744')
+  const isWhiteGarment = product.image.includes('lab-coat') || product.colors?.[0]?.toLowerCase() === '#ffffff'
 
   return (
     <div
@@ -1003,10 +1016,11 @@ function SignatureProductCard({
       >
         <Link
           to={`/product/${product.id}`}
-          style={{ display: 'block', width: '100%', height: '100%' }}
+          style={{ display: 'block', width: '100%', height: '100%', position: 'relative' }}
         >
           <img
-            src={product.image}
+            key={activeImage}
+            src={activeImage}
             alt={product.name}
             loading="lazy"
             style={{
@@ -1014,7 +1028,8 @@ function SignatureProductCard({
               height: '100%',
               objectFit: 'contain',
               display: 'block',
-              transition: `transform 0.4s ${EASE}`,
+              opacity: isChanging ? 0.6 : 1,
+              transition: `transform 0.4s ${EASE}, opacity 0.2s ease`,
             }}
             onMouseEnter={e => {
               ;(e.currentTarget as HTMLElement).style.transform = 'scale(1.05)'
@@ -1023,6 +1038,21 @@ function SignatureProductCard({
               ;(e.currentTarget as HTMLElement).style.transform = 'scale(1)'
             }}
           />
+
+          {!hasVariantImage && !isBaseColor && (
+            <div
+              aria-hidden
+              style={{
+                position: 'absolute',
+                inset: 0,
+                backgroundColor: selectedColor,
+                mixBlendMode: isWhiteGarment ? 'multiply' : 'color',
+                opacity: 0.42,
+                pointerEvents: 'none',
+                transition: 'all 0.3s ease',
+              }}
+            />
+          )}
         </Link>
 
         {/* Top-Left Badge */}
@@ -1278,20 +1308,29 @@ function SignatureProductCard({
           {/* Swatches */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.22rem' }}>
-              {(product.colors ?? []).slice(0, 3).map((col, idx) => {
+              {(product.colors ?? []).slice(0, 4).map((col, idx) => {
                 const isSelected = selectedColor === col
+                const isWhite = col.toLowerCase() === '#ffffff'
                 return (
                   <button
                     key={idx}
                     type="button"
-                    onClick={() => setSelectedColor(col)}
+                    onClick={() => handleColorSelect(col)}
                     aria-label={`Select color ${col}`}
+                    title={`Select color ${col}`}
                     style={{
-                      width: 13,
-                      height: 13,
+                      width: 14,
+                      height: 14,
                       borderRadius: '50%',
                       background: col,
-                      border: isSelected ? '1.5px solid #146EF5' : '1px solid #CBD5E1',
+                      border: isSelected
+                        ? '2px solid white'
+                        : isWhite
+                          ? '1px solid #CBD5E1'
+                          : '1px solid rgba(0,0,0,0.14)',
+                      boxShadow: isSelected
+                        ? '0 0 0 2px #146EF5, 0 2px 6px rgba(20, 110, 245, 0.35)'
+                        : '0 1px 2px rgba(0,0,0,0.06)',
                       padding: 0,
                       cursor: 'pointer',
                       transform: isSelected ? 'scale(1.2)' : 'scale(1)',

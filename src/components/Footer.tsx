@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Phone, Mail, MessageCircle, Camera, Users, Play, Share2, ArrowRight } from 'lucide-react'
+import { Phone, Mail, MessageCircle, Camera, Users, Play, Share2 } from 'lucide-react'
 
 const FOOTER_LINKS = {
   Shop: [
@@ -37,38 +37,6 @@ const FOOTER_LINKS = {
 export default function Footer() {
   return (
     <footer style={{ background: 'var(--color-navy)', color: 'white', marginTop: 'auto' }}>
-      {/* Newsletter Banner */}
-      <div style={{ background: 'var(--color-medical-blue)', padding: '2.5rem 0' }}>
-        <div className="container-site" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '2rem', flexWrap: 'wrap' }}>
-          <div>
-            <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 'clamp(1.25rem, 2vw, 1.625rem)', marginBottom: '0.375rem', letterSpacing: '-0.02em' }}>
-              Stay in the Loop
-            </div>
-            <p style={{ opacity: 0.85, fontSize: '0.9rem', fontWeight: 400 }}>
-              New arrivals, exclusive offers & institutional order updates — straight to your inbox.
-            </p>
-          </div>
-          <form
-            onSubmit={e => e.preventDefault()}
-            style={{ display: 'flex', gap: '0.625rem', flexWrap: 'wrap', minWidth: 280 }}
-          >
-            <input
-              type="email"
-              placeholder="Enter your email address"
-              className="input-field"
-              style={{
-                flex: 1, minWidth: 200,
-                background: 'rgba(255,255,255,0.12)',
-                border: '1.5px solid rgba(255,255,255,0.25)',
-                color: 'white',
-              }}
-            />
-            <button type="submit" className="btn-outline-white" style={{ padding: '0.75rem 1.25rem', flexShrink: 0 }}>
-              Subscribe <ArrowRight size={15} />
-            </button>
-          </form>
-        </div>
-      </div>
 
       {/* Main Footer */}
       <div className="container-site" style={{ paddingBlock: '4rem 2.5rem' }}>

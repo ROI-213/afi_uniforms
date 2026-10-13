@@ -13,6 +13,7 @@ export interface Product {
   salesCount?: number
   publishedAt?: string
   colors?: string[]
+  colorImages?: Record<string, string>
   sizes?: string[]
   description?: string
   rating?: number

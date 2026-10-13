@@ -29,7 +29,11 @@ export default function ProductPage() {
     )
   }
 
-  const images = [product.image, ...(product.secondaryImage ? [product.secondaryImage] : [])]
+  const colorVariantImage = selectedColor && product?.colorImages?.[selectedColor]
+  const baseImages = [product.image, ...(product.secondaryImage ? [product.secondaryImage] : [])]
+  const images = colorVariantImage
+    ? [colorVariantImage, ...baseImages.filter(img => img !== colorVariantImage)]
+    : baseImages
   const wishlisted = isInWishlist(product.id)
   const discount = product.originalPrice ? Math.round((1 - product.price / product.originalPrice) * 100) : null
   const related = PRODUCTS.filter(p => p.category === product.category && p.id !== product.id).slice(0, 4)
@@ -211,7 +215,10 @@ export default function ProductPage() {
                   {product.colors.map(color => (
                     <button
                       key={color}
-                      onClick={() => setSelectedColor(color)}
+                      onClick={() => {
+                        setSelectedColor(color)
+                        setImageIdx(0)
+                      }}
                       title={color}
                       style={{
                         width: 28, height: 28, borderRadius: '50%',
