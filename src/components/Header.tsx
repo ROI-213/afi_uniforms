@@ -5,6 +5,7 @@ import {
   ChevronDown, ChevronRight, ArrowRight, Package
 } from 'lucide-react'
 import { useStore } from '../context/StoreContext'
+import { useAuth } from '../context/AuthContext'
 import { useMediaQuery } from '../hooks/useScrollReveal'
 
 /* ─── Nav Data ─── */
@@ -130,6 +131,7 @@ function DropdownPanel({
 /* ─── Main Header ─── */
 export default function Header() {
   const { cartCount } = useStore()
+  const { user, isLoggedIn } = useAuth()
   const isMobile = useMediaQuery('(max-width: 1023px)')
   const location = useLocation()
   const navigate = useNavigate()
@@ -448,9 +450,43 @@ export default function Header() {
 
             {/* Account */}
             {!isMobile && (
-              <Link to="/account" className="afi-icon-btn" aria-label="Account">
-                <User size={20} style={{ color: 'var(--color-neutral-600)' }} />
-                <span className="lbl">Account</span>
+              <Link
+                to="/account"
+                className="afi-icon-btn"
+                aria-label={isLoggedIn ? `Account (${user?.name || 'User'})` : 'Account'}
+                style={{ position: 'relative' }}
+              >
+                <div style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <User size={20} style={{ color: isLoggedIn ? 'var(--color-medical-blue)' : 'var(--color-neutral-600)' }} />
+                  {isLoggedIn && (
+                    <span
+                      style={{
+                        position: 'absolute',
+                        top: -1,
+                        right: -2,
+                        width: 7,
+                        height: 7,
+                        borderRadius: '50%',
+                        background: '#10B981',
+                        boxShadow: '0 0 0 2px white',
+                      }}
+                      title="Logged in"
+                    />
+                  )}
+                </div>
+                <span
+                  className="lbl"
+                  style={{
+                    color: isLoggedIn ? 'var(--color-medical-blue)' : undefined,
+                    fontWeight: isLoggedIn ? 700 : 600,
+                    maxWidth: 76,
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis',
+                    whiteSpace: 'nowrap',
+                  }}
+                >
+                  {isLoggedIn ? (user?.name ? user.name.split(' ')[0] : 'My Account') : 'Account'}
+                </span>
               </Link>
             )}
 
@@ -849,9 +885,32 @@ export default function Header() {
               <Link
                 to="/account"
                 onClick={() => setMobileOpen(false)}
-                style={{ display: 'flex', alignItems: 'center', gap: '0.625rem', color: 'var(--color-neutral-600)', fontSize: '0.875rem', fontWeight: 500 }}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.625rem',
+                  color: isLoggedIn ? 'var(--color-medical-blue)' : 'var(--color-neutral-600)',
+                  fontSize: '0.875rem',
+                  fontWeight: isLoggedIn ? 600 : 500,
+                }}
               >
-                <User size={16} /> My Account
+                <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
+                  <User size={16} />
+                  {isLoggedIn && (
+                    <span
+                      style={{
+                        position: 'absolute',
+                        top: -2,
+                        right: -2,
+                        width: 5,
+                        height: 5,
+                        borderRadius: '50%',
+                        background: '#10B981',
+                      }}
+                    />
+                  )}
+                </div>
+                <span>{isLoggedIn ? `Hi, ${user?.name ? user.name.split(' ')[0] : 'My Account'}` : 'My Account'}</span>
               </Link>
               <Link
                 to="/wishlist"

@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
 import { StoreProvider } from './context/StoreContext'
+import { AuthProvider } from './context/AuthContext'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import HomePage from './pages/HomePage'
@@ -12,6 +13,7 @@ import BulkOrdersPage from './pages/BulkOrdersPage'
 import CustomUniformsPage from './pages/CustomUniformsPage'
 import WomenCategoryPage from './pages/WomenCategoryPage'
 import MenCategoryPage from './pages/MenCategoryPage'
+import AccountPage from './pages/AccountPage'
 
 // Scroll to top on route change
 function ScrollToTop() {
@@ -60,6 +62,7 @@ function AppInner() {
             <Route path="/wishlist" element={<WishlistPage />} />
             <Route path="/bulk-orders" element={<BulkOrdersPage />} />
             <Route path="/custom-uniforms" element={<CustomUniformsPage />} />
+            <Route path="/account" element={<AccountPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </PageWrapper>
@@ -91,9 +94,11 @@ function NotFound() {
 export default function App() {
   return (
     <BrowserRouter>
-      <StoreProvider>
-        <AppInner />
-      </StoreProvider>
+      <AuthProvider>
+        <StoreProvider>
+          <AppInner />
+        </StoreProvider>
+      </AuthProvider>
     </BrowserRouter>
   )
 }
