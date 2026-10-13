@@ -525,60 +525,7 @@ export default function IndustriesWeServe() {
           </div>
         </div>
 
-        {/* Bottom CTA Banner (Inside container) */}
-        <div className="container-site">
-          <div
-            style={{
-              marginTop: '3.5rem',
-              background: 'linear-gradient(135deg, #0A1932 0%, #15325B 100%)',
-              border: '1px solid #E2E8F0',
-              borderRadius: 20,
-              padding: '2rem',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              flexWrap: 'wrap',
-              gap: '1.5rem',
-              boxShadow: '0 10px 30px rgba(10, 25, 50, 0.08)',
-            }}
-          >
-            <div>
-              <div
-                style={{
-                  fontWeight: 800,
-                  fontSize: '1.25rem',
-                  color: 'white',
-                  fontFamily: 'var(--font-display)',
-                }}
-              >
-                Need a Custom Multi-Industry Uniform Package?
-              </div>
-              <div style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.8)', marginTop: 4 }}>
-                Our design and technical team creates custom uniform programs tailored to your
-                brand guidelines, fabric specs, and operational needs.
-              </div>
-            </div>
-            <Link
-              to="/bulk-orders"
-              style={{
-                padding: '0.875rem 1.75rem',
-                borderRadius: 12,
-                background: '#1769E8',
-                color: 'white',
-                fontWeight: 700,
-                fontSize: '0.875rem',
-                textDecoration: 'none',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '0.5rem',
-                whiteSpace: 'nowrap',
-                boxShadow: '0 6px 20px rgba(23,105,232,0.35)',
-              }}
-            >
-              Start Custom Uniform Project <ArrowRight size={16} />
-            </Link>
-          </div>
-        </div>
+
       </div>
 
       {/* ── Ultra-Smooth Continuous Sliding Keyframes ── */}
