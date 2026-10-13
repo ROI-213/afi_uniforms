@@ -146,8 +146,32 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem' }}>
           <p style={{ fontSize: '0.8125rem', opacity: 0.5 }}>
-            © 2026 AFI Uniform. All rights reserved. Made with ♥ in India.
+            © 2026 AFI Uniform. All rights reserved.
           </p>
+          <a
+            href="https://wa.me/919945379333"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              fontSize: '0.78rem',
+              fontWeight: 700,
+              letterSpacing: '0.06em',
+              textTransform: 'uppercase',
+              color: 'rgba(255, 255, 255, 0.8)',
+              textDecoration: 'none',
+              transition: 'color 0.2s ease',
+              display: 'inline-flex',
+              alignItems: 'center',
+            }}
+            onMouseEnter={e => {
+              (e.currentTarget as HTMLElement).style.color = '#38BDF8'
+            }}
+            onMouseLeave={e => {
+              (e.currentTarget as HTMLElement).style.color = 'rgba(255, 255, 255, 0.8)'
+            }}
+          >
+            DEVELOPED BY ROI INFOTECH
+          </a>
           <div style={{ display: 'flex', gap: '0.5rem' }}>
             {['Visa', 'Mastercard', 'UPI', 'Paytm', 'RazorPay'].map(method => (
               <span key={method} style={{ padding: '0.25rem 0.5rem', borderRadius: 4, background: 'rgba(255,255,255,0.08)', fontSize: '0.6875rem', fontWeight: 600, opacity: 0.6 }}>
